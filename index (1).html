@@ -1,0 +1,491 @@
+<!DOCTYPE html><!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil Nazilah — Fantasy Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #211433; /* deep purple */
+      --bg2: #ff6fa3; /* rose */
+      --card: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.85);
+      --accent: #ffd1e6;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{
+      background: radial-gradient(ellipse at 10% 20%, rgba(255,255,255,0.04), transparent 10%),
+                  linear-gradient(120deg, var(--bg1) 0%, #3b1156 40%, var(--bg2) 100%);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+    }
+
+    /* dreamy glowing hearts & stars */
+    .scene{
+      position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+    }
+    .heart{
+      position:absolute;width:50px;height:50px;transform:rotate(-45deg);
+      background:linear-gradient(45deg,#ff9acc,#ff6fa3);border-radius:8px;opacity:.9;
+      box-shadow:0 6px 20px rgba(255,111,145,0.25);
+      animation:float 8s linear infinite;
+    }
+    .heart:before,.heart:after{content:"";position:absolute;background:inherit;border-radius:50%;}
+    .heart:before{width:50px;height:50px;top:-25px;left:0}
+    .heart:after{width:50px;height:50px;left:25px;top:0}
+    @keyframes float{
+      0%{transform:translateY(110vh) rotate(-15deg) scale(.8)}
+      50%{transform:translateY(60vh) rotate(10deg) scale(1)}
+      100%{transform:translateY(-20vh) rotate(45deg) scale(.8)}
+    }
+
+    .container{position:relative;z-index:2;max-width:1000px;margin:48px auto;padding:32px}
+    .card{
+      background:linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      backdrop-filter: blur(8px);
+      border-radius:18px;padding:26px;border:1px solid rgba(255,255,255,0.06);
+      display:flex;gap:24px;align-items:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    }
+    .profile{
+      width:220px;flex:0 0 220px;text-align:center;
+    }
+    .avatar{
+      width:180px;height:180px;border-radius:50%;overflow:hidden;margin:0 auto 14px;position:relative;border:6px solid rgba(255,255,255,0.08);
+      box-shadow:0 14px 40px rgba(0,0,0,0.45), 0 4px 12px rgba(255,111,145,0.12) inset;
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .name{font-size:22px;font-weight:700;margin:0 0 6px}
+    .subtitle{font-size:13px;color:var(--muted);margin:0}
+
+    .info{flex:1}
+    .section{margin-bottom:14px}
+    .section h3{margin:0 0 8px;font-size:14px;letter-spacing:.6px}
+    .bio{background:var(--card);color:#3b1a3b;padding:14px;border-radius:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .pill{display:inline-block;background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:999px;font-size:13px}
+
+    .contact p{margin:6px 0;color:var(--muted)}
+
+    footer{margin-top:18px;color:rgba(255,255,255,0.8);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:720px){
+      .card{flex-direction:column;align-items:center;padding:18px}
+      .profile{width:100%}
+      .avatar{width:150px;height:150px}
+    }
+
+    /* subtle heart pulse behind avatar */
+    .avatar::after{content:"";position:absolute;inset:auto -18px -18px auto;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(255,111,145,0.25), transparent 30%);filter:blur(18px);z-index:-1}
+
+  </style>
+</head>
+<body>
+
+  <div class="scene" aria-hidden="true">
+    <!-- floating hearts: randomized positions set inline -->
+    <div class="heart" style="left:6%;bottom:-10%;width:48px;height:48px;animation-duration:10s;opacity:0.95"></div>
+    <div class="heart" style="left:22%;bottom:-20%;width:36px;height:36px;animation-duration:14s;opacity:0.8"></div>
+    <div class="heart" style="left:40%;bottom:-15%;width:60px;height:60px;animation-duration:12s;opacity:0.9"></div>
+    <div class="heart" style="left:62%;bottom:-25%;width:44px;height:44px;animation-duration:11s;opacity:0.85"></div>
+    <div class="heart" style="left:82%;bottom:-5%;width:50px;height:50px;animation-duration:9s;opacity:0.9"></div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <aside class="profile">
+        <div class="avatar">
+          <!-- Ganti src ke foto anda: 'profile.jpg' atau path gambar yang Anda upload -->
+          <img src="lalaa.jpg" alt="Foto Nazilah (ganti dengan foto Anda)">
+        </div>
+        <h2 class="name">Nazilah</h2>
+        <p class="subtitle">SMK Ma’arif NU Tirto — TKJ</p>
+        <div style="margin-top:8px">
+          <span class="pill">Hobi: Memancing</span>
+        </div>
+      </aside>
+
+      <main class="info">
+        <section class="section bio">
+          <h3>Tentang Saya</h3>
+          <p>Nama: <strong>Nazilah</strong><br>
+          Tempat, Tgl Lahir: <strong>Pekalongan, 15 Desember 2009</strong><br>
+          Jenis Kelamin: <strong>Perempuan</strong><br>
+          Agama: <strong>Islam</strong><br>
+          Kewarganegaraan: <strong>Indonesia</strong><br>
+          Alamat: <strong>Desa Tangkil Tengah gg2 RT/RW 13/7 No:29 Kedungwuni, Pekalongan, Jawa Tengah 51173</strong>
+          </p>
+        </section>
+
+        <div class="grid">
+          <div class="section">
+            <h3>Pendidikan</h3>
+            <p>Sekolah Dasar: <strong>MI Walisongo Tangkil Tengah</strong><br>
+               SMP: <strong>SMP Negeri 1 Buaran</strong><br>
+               SMK: <strong>SMK Ma’arif NU Tirto — Jurusan Teknik Komputer dan Jaringan (TKJ)</strong>
+            </p>
+          </div>
+
+          <div class="section">
+            <h3>Keahlian & Motto</h3>
+            <p>Keahlian: <strong>Memasak</strong><br>
+               Cita-cita: <strong>Bos Muda</strong><br>
+               Motto: <em>"Ragu-ragu hanya menunda keberhasilan. Berani melangkah adalah kunci pertama."</em>
+            </p>
+          </div>
+
+          <div class="section contact">
+            <h3>Kontak</h3>
+            <p>Nomor Telepon: <strong>081328133522</strong></p>
+            
+          </div>
+
+        </div>
+
+        <footer>
+          <p>Profil ini dibuat dengan tema <strong>Fantasy Love</strong> — Ubah foto dengan meletakkan file <code>profile.jpg</code> di folder yang sama, atau edit atribut <code>src</code> gambar.</p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Memasak Nazilah — Fantasy Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #2a0d3d;  /* ungu gelap */
+      --bg2: #ff6fa3;  /* pink rose */
+      --card: #ffffff;
+      --accent: #ff6fa3;
+      --muted: #555;
+      --shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+    body {
+      background: linear-gradient(135deg, var(--bg1) 0%, #4b166d 50%, var(--bg2) 100%);
+      min-height: 100vh;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* Floating hearts */
+    .scene {
+      position: fixed;
+      inset: 0;
+      z-index: 0";"
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .heart {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      transform: rotate(-45deg);
+      background: linear-gradient(45deg, #ff9acc, #ff6fa3);
+      border-radius: 8px;
+      opacity: .9;
+      animation: float 10s linear infinite;
+    }
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      background: inherit;
+      border-radius: 50%;
+    }
+    .heart:before {
+      width: 40px;
+      height: 40px;
+      top: -20px;
+      left: 0;
+    }
+    .heart:after {
+      width: 40px;
+      height: 40px;
+      left: 20px;
+      top: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(110vh) rotate(-20deg) scale(0.8); }
+      50% { transform: translateY(60vh) rotate(20deg) scale(1); }
+      100% { transform: translateY(-20vh) rotate(45deg) scale(0.8); }
+    }
+
+    /* Container */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    h1, h2 {
+      color: var(--bg1);
+      margin-bottom: 10px;
+    }
+    h3 { margin: 10px 0; color: var(--bg1); }
+    p { margin-bottom: 10px; line-height: 1.6; }
+
+    ul, ol { margin-left: 20px; margin-bottom: 10px; }
+
+    .meta { color: var(--muted); font-size: 14px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag {
+      background: #ffe5ef;
+      color: #b24d7a;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .hasil-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      color: #fff;
+      font-size: 13px;
+      margin: 30px 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Hearts -->
+  <div class="scene" aria-hidden="true">
+    <div class="heart" style="left:10%;animation-duration:12s;width:50px;height:50px"></div>
+    <div class="heart" style="left:30%;animation-duration:14s;width:35px;height:35px"></div>
+    <div class="heart" style="left:55%;animation-duration:10s;width:45px;height:45px"></div>
+    <div class="heart" style="left:75%;animation-duration:13s;width:40px;height:40px"></div>
+    <div class="heart" style="left:90%;animation-duration:11s;width:50px;height:50px"></div>
+  </div>
+
+  <main class="container">
+    <section class="card">
+      <h1>Tentang Saya</h1>
+      <p>Saya menyukai dunia memasak sejak kecil. Dengan ketelatenan dan kreativitas, saya mampu mengolah bahan sederhana menjadi hidangan yang lezat dan menarik. Saya senang mencoba resep baru dan terus meningkatkan teknik memasak.</p>
+      <div class="tags">
+        <span class="tag">Kreatif</span>
+        <span class="tag">Telaten</span>
+        <span class="tag">Eksperimen Resep</span>
+        <span class="tag">Food Styling</span>
+      </div>
+    </section>
+
+    <<
+
+
+
+  <footer>
+    <e</strong></p>
+  </footer>
+</body>
+</html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelebihan Memasak - Nazilah</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Animasi bintang */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      z-index: -1;
+      animation: starsMove 60s linear infinite;
+    }
+
+    @keyframes starsMove {
+      from { background-position: 0 0; }
+      to { background-position: 10000px 10000px; }
+    }
+
+    header {
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      font-size: 2em;
+      font-weight: bold;
+      color: #ffccff;
+      text-shadow: 0 0 10px #ff66cc;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    h2 {
+      color: #ffccff;
+      text-shadow: 0 0 8px #ff99cc;
+    }
+
+    img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 10px 0;
+      box-shadow: 0 0 12px rgba(255,255,255,0.5);
+    }
+
+    ul, ol {
+      text-align: left;
+      margin: 10px auto;
+      display: inline-block;
+    }
+
+    .meta {
+      font-style: italic;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header>
+    🌟 Kelebihan Memasak - Nazilah 🌟
+  </header>
+
+  <section class="card">
+    <h2>Kelebihan Saya dalam Memasak</h2>
+    <p>Saya memiliki kelebihan dalam memasak dengan rasa yang enak, tampilan menarik, dan penuh kreativitas. Salah satu hobi saya adalah mencoba resep baru agar hasil masakan lebih bervariasi dan menarik.</p>
+  </section>
+
+  <!-- Hasil Karya 1 -->
+  <section class="card hasil-card">
+    <h2>Hasil Karya #1 — Telur Balado</h2>
+    <img src="balado.jpg" alt="Telur Balado buatan Nazilah">
+    <h3>Telur Balado — "Pedas, Gurih, Menggugah Selera"</h3>
+    <p class="meta">Telur balado adalah salah satu masakan khas Indonesia dengan rasa pedas dan gurih, cocok disantap bersama nasi hangat.</p>
+    
+    <p><strong>Bahan-bahan:</strong></p>
+    <ul>
+      <li>Telur rebus 5 butir</li>
+      <li>Cabai merah 10 buah</li>
+      <li>Bawang merah 6 siung</li>
+      <li>Bawang putih 3 siung</li>
+      <li>Tomat 1 buah</li>
+      <li>Garam, gula, kaldu bubuk secukupnya</li>
+    </ul>
+
+    <p><strong>Langkah singkat:</strong></p>
+    <ol>
+      <li>Rebus telur, kupas kulitnya, lalu goreng sebentar.</li>
+      <li>Haluskan cabai, bawang merah, bawang putih, dan tomat.</li>
+      <li>Tumis bumbu halus hingga harum.</li>
+      <li>Masukkan telur, aduk rata dengan bumbu.</li>
+      <li>Beri garam, gula, kaldu bubuk, lalu masak hingga matang.</li>
+    </ol>
+  <!-- Hasil Karya 2-->
+  <section class="card hasil-card">
+    <h2>Hasil Karya #3 — Sayur Sop</h2>
+    <img src="sop.jpg" alt="Sayur Sop buatan Nazilah">
+    <h3>Sayur Sop — "Segar & Bergizi"</h3>
+    <p class="meta">Sayur sop adalah masakan sehat berkuah bening dengan sayuran segar dan bumbu sederhana, cocok untuk segala suasana.</p>
+    
+    <p><strong>Bahan-bahan:</strong></p>
+    <ul>
+      <li>Wortel 2 buah</li>
+      <li>Kentang 1 buah</li>
+      <li>Buncis 10 helai</li>
+      <li>Kubis secukupnya</li>
+      <li>Seledri & daun bawang</li>
+      <li>Bawang putih 3 siung</li>
+      <li>Lada bubuk, garam, kaldu secukupnya</li>
+    </ul>
+
+    <p><strong>Langkah singkat:</strong></p>
+    <ol>
+      <li>Rebus air hingga mendidih.</li>
+      <li>Masukkan bawang putih yang sudah digeprek.</li>
+      <li>Tambahkan wortel, kentang, buncis, dan kubis.</li>
+      <li>Beri garam, lada, dan kaldu secukupnya.</li>
+      <li>Masukkan seledri dan daun bawang sebelum diangkat.</li>
+      <li>Sajikan hangat bersama nasi.</li>
+    </ol>
+
+    <p class="meta">Tips: Tambahkan bakso atau ayam suwir untuk variasi rasa.</p>
+  </section>
+
+</body>
+</html>
+    <!-- Bagian Kesimpulan -->
+    <section class="card">
+      <h2>Kesimpulan</h2>
+      <p>Website ini dibuat untuk menampilkan <strong>kelebihan Nazilah dalam memasak</strong> serta beberapa hasil karya masakan andalan.</p>
+      <ul>
+        <li><strong>Kelebihan:</strong> Kreatif, telaten, suka mencoba resep baru, dan mampu menyajikan makanan menarik secara visual.</li>
+        <li><strong>Hasil Karya Masakan:</strong>
+          <ul>
+            <li>Telur Balado — masakan pedas gurih khas Nusantara.</li>
+            
+            <li>Sayur Sop — masakan sehat dengan kuah segar penuh gizi.</li>
+          </ul>
+        </li>
+        <li>Setiap hidangan dilengkapi dengan deskripsi, bahan, langkah singkat, dan tips memasak.</li>
+        <li>Tema website menggunakan nuansa <em>Fantasy Love</em> yang membuat tampilan elegan dan berbeda dari website biasa.</li>
+      </ul>
+      <p><strong>Secara keseluruhan, website ini berhasil menunjukkan bahwa memasak bukan hanya sekadar aktivitas, tetapi juga bentuk kreativitas dan identitas diri.</strong></p>
+    </section>
